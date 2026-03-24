@@ -35,9 +35,11 @@ class LoginPage extends Page {
            await this.login(this.users[i], 'secret_sauce');
            if (this.users[i] === 'locked_out_user') {
                 await expect(this.errorMessage).toExist();
-           } else 
-                await this.logOut();
+           } else {
+            await this.logOut();
                 await expect(this.getUserName).toExist();
+           }
+                
         }
     }
   
